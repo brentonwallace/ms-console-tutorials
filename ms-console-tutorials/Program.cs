@@ -6,7 +6,7 @@ namespace ms_console_tutorials
     {
         static void Main(string[] args)
         {
-            
+
 
 
             Console.WriteLine("Hello World!");
@@ -58,11 +58,68 @@ namespace ms_console_tutorials
             Console.WriteLine();
 
 
-            Console.WriteLine("If a calculation produces a value that exceeds those limits, you have an underflow or overflow condition. The answer appears to wrap from one limit to the other.");
+            Console.WriteLine("If a calculation produces a value that exceeds " +
+                "those limits, you have an underflow or overflow condition. " +
+                "The answer appears to wrap from one limit to the other.");
             Console.WriteLine();
 
             int what = max + 3;
             Console.WriteLine($"An example of overflow: {what}");
+            Console.WriteLine();
+
+            double f = 5;
+            double g = 4;
+            double h = 2;
+            double j = (f + g) / h;
+            Console.WriteLine(j);
+            Console.WriteLine();
+
+            f = 19;
+            g = 23;
+            h = 8;
+            j = (f + g) / h;
+            Console.WriteLine(j);
+            Console.WriteLine();
+
+
+            double maxd = double.MaxValue;
+            double mind = double.MinValue;
+            Console.WriteLine($"The range of double is {mind} to {maxd}");
+
+            Console.WriteLine();
+
+            Console.WriteLine("You've seen the basic numeric types in C#: intege" +
+                "rs and doubles. There's one other type to learn: the decimal ty" +
+                "pe. The decimal type has a smaller range but greater precision than double.");
+            Console.WriteLine();
+
+            decimal mindc = decimal.MinValue;
+            decimal maxdc = decimal.MaxValue;
+            Console.WriteLine($"The range of the decimal type is {mindc} to {maxdc}");
+
+            Console.WriteLine("Notice that the range is smaller than the double " +
+                "type. You can see the greater precision with the decimal type by " +
+                "trying the following code:");
+            Console.WriteLine();
+
+            Console.WriteLine("double ab = 1.0;");
+            Console.WriteLine("double bb = 3.0;");
+
+            double ab = 1.0;
+            double bb = 3.0;
+
+            Console.WriteLine("ab / bb = " + (ab / bb));
+            Console.WriteLine();
+
+
+            Console.WriteLine("decimal cb = 1.0M;");
+            Console.WriteLine("decimal db = 3.0M;");
+
+            decimal cb = 1.0M;
+            decimal db = 3.0M;
+
+            Console.WriteLine("cb / db = " + (cb / db));
+
 
 
 
