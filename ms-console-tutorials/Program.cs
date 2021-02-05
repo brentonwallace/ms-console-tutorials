@@ -6,6 +6,9 @@ namespace ms_console_tutorials
     {
         static void Main(string[] args)
         {
+            
+
+
             Console.WriteLine("Hello World!");
 
             //Exploring integer math
@@ -34,11 +37,32 @@ namespace ms_console_tutorials
 
             //Integer precision AND LIMITS
 
+            a = 7;
+            b = 4;
+            c = 3;
+            d = (a + b) / c;
+            int e = (a + b) % c;
+            Console.WriteLine($"quotient: {d}");
+            Console.WriteLine($"remainder: {e}");
+            Console.WriteLine();
+
+            int max = int.MaxValue;
+            int min = int.MinValue;
+
+            Console.WriteLine($"The range of integers is {min} to {max}");
+            Console.WriteLine();
+
+            // OR - Removes need for variables min and max =
+
+            Console.WriteLine("The range of integers is " + int.MinValue + " to " + int.MaxValue);
+            Console.WriteLine();
 
 
+            Console.WriteLine("If a calculation produces a value that exceeds those limits, you have an underflow or overflow condition. The answer appears to wrap from one limit to the other.");
+            Console.WriteLine();
 
-
-
+            int what = max + 3;
+            Console.WriteLine($"An example of overflow: {what}");
 
 
 
