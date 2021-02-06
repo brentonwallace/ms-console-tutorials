@@ -4,10 +4,99 @@ namespace ms_console_tutorials
 {
     class Program
     {
+
+
+
+
+        static void ExploreIf()
+        {
+            //Make decisions using the if statement
+
+            int a = 5;
+            int b = 6;
+            if (a + b > 10)
+                Console.WriteLine("The answer is greater than 10.");
+
+            b = 3;
+
+            if (a + b > 10)
+                Console.WriteLine("The answer is greater than 10.");
+            else
+                Console.WriteLine("The answer is not greater than 10.");
+
+            Console.WriteLine();
+
+            Console.WriteLine("Because indentation isn't significant, you need " +
+                "to use { and } to indicate when you want more than one statement " +
+                "to be part of the block that executes conditionally.");
+            Console.WriteLine();
+
+
+            if (a + b > 10)
+            {
+                Console.WriteLine("The answer is greater than 10.");
+            }
+            else
+            {
+                Console.WriteLine("The answer is not greater than 10.");
+            }
+
+
+            int c = 4;
+            if ((a + b + c > 10) && (a == b))
+            {
+                Console.WriteLine("The answer is greater than 10");
+                Console.WriteLine("And the first number is equal to the second");
+            }
+            else
+            {
+                Console.WriteLine("The answer is not greater than 10");
+                Console.WriteLine("Or the first number is not equal to the second");
+            }
+
+
+
+            // Use loops to repeat operations
+
+
+
+            int counter = 0;
+            while (counter < 10)
+            {
+                Console.WriteLine($"Hello World! The counter is {counter}");
+                counter++;
+            }
+
+
+
+            counter = 0;
+            do
+            {
+                Console.WriteLine($"Hello World! The counter is {counter}");
+                counter++;
+            } while (counter < 10);
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         static void Main(string[] args)
         {
 
-           Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello World!");
 
             //Exploring integer math
 
@@ -145,13 +234,31 @@ namespace ms_console_tutorials
             Console.WriteLine("Solution #2:");
             Console.WriteLine("Console.WriteLine(The area of a circle with a radius of 2.50cm is  + (2.50 * 2.50) * Math.PI);");
             Console.WriteLine("The area of a circle with a radius of 2.50cm is " + (2.50 * 2.50) * Math.PI);
+            Console.WriteLine();
+            Console.WriteLine();
 
 
-            //Congratulations!
 
-            //100 % complete!
 
-            //You've completed the "Numbers in C#" interactive tutorial. 
+
+
+
+
+
+
+            //LEARN CONDITIONAL LOGIC WITH BRANCH AND LOOP STATEMENTS
+
+            ExploreIf();
+
+
+
+
+
+
+
+
+
+
 
 
 
