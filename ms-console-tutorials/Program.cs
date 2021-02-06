@@ -7,9 +7,7 @@ namespace ms_console_tutorials
         static void Main(string[] args)
         {
 
-
-
-            Console.WriteLine("Hello World!");
+           Console.WriteLine("Hello World!");
 
             //Exploring integer math
 
@@ -93,6 +91,10 @@ namespace ms_console_tutorials
                 "pe. The decimal type has a smaller range but greater precision than double.");
             Console.WriteLine();
 
+
+            //Work with decimal types
+
+
             decimal mindc = decimal.MinValue;
             decimal maxdc = decimal.MaxValue;
             Console.WriteLine($"The range of the decimal type is {mindc} to {maxdc}");
@@ -119,11 +121,37 @@ namespace ms_console_tutorials
             decimal db = 3.0M;
 
             Console.WriteLine("cb / db = " + (cb / db));
+            Console.WriteLine();
+
+            Console.WriteLine("The M suffix on the numbers is how you indicate " +
+                "that a constant should use the decimal type.");
+
+            Console.WriteLine();
+
+            Console.WriteLine("Challange:");
+            Console.WriteLine("Now that you've seen the different numeric types," +
+                " write code that calculates the area of a circle whose radius is 2.50 centimeters.");
+            Console.WriteLine();
+            Console.WriteLine("Solution #1:");
+            Console.WriteLine("double areaOfCircle = (2.50 * 2.50) * Math.PI;");
 
 
+            double areaOfCircle = (2.50 * 2.50) * Math.PI;
+            Console.WriteLine("The area of a circle with a radius of 2.50cm is " + areaOfCircle);
+            Console.WriteLine();
+
+            // OR without using variables ->
+
+            Console.WriteLine("Solution #2:");
+            Console.WriteLine("Console.WriteLine(The area of a circle with a radius of 2.50cm is  + (2.50 * 2.50) * Math.PI);");
+            Console.WriteLine("The area of a circle with a radius of 2.50cm is " + (2.50 * 2.50) * Math.PI);
 
 
+            //Congratulations!
 
+            //100 % complete!
+
+            //You've completed the "Numbers in C#" interactive tutorial. 
 
 
 
