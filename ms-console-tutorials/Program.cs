@@ -53,7 +53,7 @@ namespace ms_console_tutorials
                 Console.WriteLine("The answer is not greater than 10");
                 Console.WriteLine("Or the first number is not equal to the second");
             }
-
+            Console.WriteLine();
 
 
             // Use loops to repeat operations
@@ -75,6 +75,32 @@ namespace ms_console_tutorials
                 Console.WriteLine($"Hello World! The counter is {counter}");
                 counter++;
             } while (counter < 10);
+            Console.WriteLine();
+
+
+
+
+
+            //Work with the for loop
+
+            for (int index = 0; index < 10; index++)
+            {
+                Console.WriteLine($"Hello World! The index is {index}");
+            }
+            Console.WriteLine();
+
+
+            
+            for (int row = 1; row < 11; row++)
+            {
+                for (char column = 'a'; column < 'k'; column++)
+                {
+                    Console.WriteLine($"The cell is ({row}, {column})");
+                }
+            }
+            Console.WriteLine();
+
+
 
 
 
@@ -93,7 +119,9 @@ namespace ms_console_tutorials
 
 
 
-        static void Main(string[] args)
+
+
+        public static void Main(string[] args)
         {
 
             Console.WriteLine("Hello World!");
