@@ -1,9 +1,109 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ms_console_tutorials
 {
     class Program
     {
+
+
+        static void DataCollections()
+        {
+
+            // A basic list example
+
+            var names = new List<string> { "Wallace", "Ana", "Felipe" };
+
+            foreach (var name in names)
+            {
+                Console.WriteLine($"Hello {name.ToUpper()}!");
+            }
+
+
+            Console.WriteLine();
+            names.Add("Maria");
+            names.Add("Bill");
+            names.Remove("Ana");
+            foreach (var name in names)
+            {
+                Console.WriteLine($"Hello {name.ToUpper()}!");
+            }
+
+
+            // Modify list content
+
+            Console.WriteLine();
+            names.Add("Maria");
+            names.Add("Bill");
+            names.Remove("Ana");
+
+            foreach (var name in names)
+            {
+                Console.WriteLine($"Hello {name.ToUpper()}!");
+            }
+
+            Console.WriteLine($"My name is {names[0]}");
+            Console.WriteLine($"I've added {names[2]} and {names[3]} to the list");
+            Console.WriteLine();
+            Console.WriteLine("The IndexOf method searches for an item and " +
+                "returns the index of the item. If the item isn't in the list, IndexOf returns -1.");
+            Console.WriteLine();
+
+            var index = names.IndexOf("Felipe");
+
+            if (index == -1)
+            {
+                Console.WriteLine($"When an item is not found, IndexOf returns {index}");
+            }
+            else
+            {
+                Console.WriteLine($"The name {names[index]} is at index {index}");
+            }
+            Console.WriteLine();
+
+
+            // Lists of other types
+
+            // Fibonacci sequence
+
+            var fibonacciNumbers = new List<int> { 1, 1 };
+            var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
+            var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
+
+            fibonacciNumbers.Add(previous + previous2);
+
+            foreach (var item in fibonacciNumbers)
+                Console.WriteLine(item);
+            Console.WriteLine();
+
+
+
+
+            // CHALLENGE
+
+            Console.WriteLine("Challenge:");
+            Console.WriteLine("See if you can put together some of the concepts " +
+                "from this and earlier lessons. Expand on what you've built " +
+                "so far with Fibonacci Numbers. Try to write the code to " +
+                "generate the first 20 numbers in the sequence. " +
+                "(As a hint, the 20th Fibonacci number is 6765.)");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
 
 
 
@@ -90,7 +190,7 @@ namespace ms_console_tutorials
             Console.WriteLine();
 
 
-            
+
             for (int row = 1; row < 11; row++)
             {
                 for (char column = 'a'; column < 'k'; column++)
@@ -113,12 +213,12 @@ namespace ms_console_tutorials
             int remainder = 0;
             int sum = 0;
             while (counter < 21)
-            {               
+            {
                 remainder = counter % 3;
                 Console.WriteLine(remainder);
                 if (remainder == 0)
-                {         
-                    sum = sum + counter;            
+                {
+                    sum = sum + counter;
                 }
                 counter++;
             }
@@ -130,6 +230,14 @@ namespace ms_console_tutorials
 
 
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -304,11 +412,13 @@ namespace ms_console_tutorials
             ExploreIf();
 
 
+            //LEARN TO MANAGE DATA COLLECTIONS USING THE GENERIC LIST TYPE
+
+            DataCollections();
 
 
 
-
-
+            
 
 
 
