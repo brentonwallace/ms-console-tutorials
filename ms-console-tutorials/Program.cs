@@ -101,6 +101,31 @@ namespace ms_console_tutorials
             Console.WriteLine();
 
 
+            //Combine branches and loops
+
+            Console.WriteLine("Now that you've seen the if statement and the " +
+                "looping constructs in the C# language, see if you can write " +
+                "C# code to find the sum of all integers 1 through 20 that are divisible by 3.");
+            Console.WriteLine();
+
+
+            counter = 1;
+            int remainder = 0;
+            int sum = 0;
+            while (counter < 21)
+            {               
+                remainder = counter % 3;
+                Console.WriteLine(remainder);
+                if (remainder == 0)
+                {         
+                    sum = sum + counter;            
+                }
+                counter++;
+            }
+            Console.WriteLine("Sum of all odd numbers: " + sum);
+            Console.WriteLine();
+
+
 
 
 
