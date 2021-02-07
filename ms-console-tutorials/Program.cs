@@ -7,6 +7,23 @@ namespace ms_console_tutorials
     {
 
 
+
+
+
+
+        static void ObjectsClasses()
+        {
+            Console.WriteLine();
+            var account = new BankAccount("Wallace", 1000000000);
+            Console.WriteLine($"Account {account.Number} was created for {account.Owner} with {account.Balance} initial balance.");
+        }
+
+
+
+
+
+
+
         static void DataCollections()
         {
 
@@ -76,9 +93,6 @@ namespace ms_console_tutorials
                 Console.WriteLine(item);
             Console.WriteLine();
 
-
-
-
             // CHALLENGE
 
             Console.WriteLine("Challenge:");
@@ -88,20 +102,15 @@ namespace ms_console_tutorials
                 "generate the first 20 numbers in the sequence. " +
                 "(As a hint, the 20th Fibonacci number is 6765.)");
 
+            Console.WriteLine();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+            for (int i = 0; i < 20; i++)
+            {
+                previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
+                previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
+                fibonacciNumbers.Add(previous + previous2);
+                Console.WriteLine(fibonacciNumbers[i]);
+            }
 
         }
 
@@ -225,32 +234,7 @@ namespace ms_console_tutorials
             Console.WriteLine("Sum of all odd numbers: " + sum);
             Console.WriteLine();
 
-
-
-
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -407,22 +391,17 @@ namespace ms_console_tutorials
 
 
 
-            //LEARN CONDITIONAL LOGIC WITH BRANCH AND LOOP STATEMENTS
+            // LEARN CONDITIONAL LOGIC WITH BRANCH AND LOOP STATEMENTS
 
             ExploreIf();
 
-
-            //LEARN TO MANAGE DATA COLLECTIONS USING THE GENERIC LIST TYPE
+            // LEARN TO MANAGE DATA COLLECTIONS USING THE GENERIC LIST TYPE
 
             DataCollections();
 
+            // EXPLORE OBJECT ORIENTED PROGRAMMING WITH CLASSES AND OBJECTS
 
-
-            
-
-
-
-
+            ObjectsClasses();
 
 
 
