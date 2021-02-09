@@ -9,14 +9,13 @@ namespace ms_console_tutorials
 
 
 
-
-
         static void ObjectsClasses()
         {
-            Console.WriteLine();
-            var account = new BankAccount("Wallace", 1000000000);
+            var account = new BankAccount("<name>", 1000);
             Console.WriteLine($"Account {account.Number} was created for {account.Owner} with {account.Balance} initial balance.");
         }
+
+
 
 
 
@@ -399,9 +398,9 @@ namespace ms_console_tutorials
 
             DataCollections();
 
-            // EXPLORE OBJECT ORIENTED PROGRAMMING WITH CLASSES AND OBJECTS
-
             ObjectsClasses();
+
+        
 
 
 
