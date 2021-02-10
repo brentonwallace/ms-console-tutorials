@@ -109,6 +109,7 @@ namespace ms_console_tutorials
                 previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
                 fibonacciNumbers.Add(previous + previous2);
                 Console.WriteLine(fibonacciNumbers[i]);
+                Console.WriteLine();
             }
 
         }
