@@ -99,6 +99,13 @@ namespace ms_console_tutorials
 
         }
 
+        public virtual void PerformMonthEndTransactions() { }
+
+
+
+
+
+
 
 
     }
