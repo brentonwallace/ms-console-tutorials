@@ -40,6 +40,10 @@ namespace ms_console_tutorials
                 Console.WriteLine(e.ToString()); 
             }
 
+            // CHALLENGE - LOG ALL TRANSACTIONS
+
+            Console.WriteLine(account.GetAccountHistory());
+
         }
 
 
