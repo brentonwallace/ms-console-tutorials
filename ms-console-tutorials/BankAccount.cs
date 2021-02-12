@@ -18,67 +18,63 @@ namespace ms_console_tutorials
                 }
                 return balance;
             } 
-
-
-
-
-
         }
 
+        
+        
         private static int accountNumberSeed = 1234567890;
 
-        
-        
-        
-        
-        public BankAccount(string name, decimal initialBalance)
+
+
+
+
+        private readonly decimal minimumBalance;
+
+        public BankAccount(string name, decimal initialBalance) : this(name, initialBalance, 0) { }
+
+        public BankAccount(string name, decimal initialBalance, decimal minimumBalance)
         {
-            this.Owner = name;
-            // this.Balance = initialBalance;
             this.Number = accountNumberSeed.ToString();
             accountNumberSeed++;
-            MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
 
-
+            this.Owner = name;
+            this.minimumBalance = minimumBalance;
+            if (initialBalance > 0)
+                MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
         }
 
-       
-        
-        
-        
+
         private List<Transaction> allTransactions = new List<Transaction>();
 
         
-
-
-
+        
         public void MakeDeposit(decimal amount, DateTime date, string note)
         {
-
             if (amount <= 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(amount), "Amount of deposit must be positive");
             }
-
             var deposit = new Transaction(amount, date, note);      // OBJECt of Class TRANSACTION!!--
             allTransactions.Add(deposit);
-
         }
+
+
 
         public void MakeWithdrawal(decimal amount, DateTime date, string note)
         {
-
             if (amount <= 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(amount), "Amount of withdrawal must be positive");
             }
-            if (Balance - amount < 0)
+            if (Balance - amount < minimumBalance)
             {
                 throw new InvalidOperationException("Not sufficient funds for this withdrawal");
             }
             var withdrawal = new Transaction(-amount, date, note);
             allTransactions.Add(withdrawal);
         }
+
+
 
         // CHALLENGE - LOG ALL TRANSACTIONS
 

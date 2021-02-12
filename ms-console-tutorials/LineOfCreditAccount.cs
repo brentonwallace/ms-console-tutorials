@@ -6,9 +6,9 @@ namespace ms_console_tutorials
 
     public class LineOfCreditAccount : BankAccount
     {
-        public LineOfCreditAccount(string name, decimal initialBalance/* decimal creditLimit*/) : base(name, initialBalance)
+        public LineOfCreditAccount(string name, decimal initialBalance, decimal creditLimit) : base(name, initialBalance, -creditLimit)
         {
-            // Parameter "decimal creditLimit" - unsure how it got there but is unused and causes errors
+            
         }
 
         public override void PerformMonthEndTransactions()
@@ -21,6 +21,9 @@ namespace ms_console_tutorials
                 MakeWithdrawal(interest, DateTime.Now, "Charge monthly interest");
             }
         }
+
+
+
 
 
     }
