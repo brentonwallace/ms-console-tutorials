@@ -7,21 +7,22 @@ namespace ms_console_tutorials
     {
         public string Number { get; }
         public string Owner { get; set; }
-        public decimal Balance {
-             get
+        public decimal Balance
+        {
+            get
             {
                 decimal balance = 0;
                 foreach (var item in allTransactions)
                 {
                     balance += item.Amount;
-                    
+
                 }
                 return balance;
-            } 
+            }
         }
 
-        
-        
+
+
         private static int accountNumberSeed = 1234567890;
 
 
@@ -46,8 +47,8 @@ namespace ms_console_tutorials
 
         private List<Transaction> allTransactions = new List<Transaction>();
 
-        
-        
+
+
         public void MakeDeposit(decimal amount, DateTime date, string note)
         {
             if (amount <= 0)
@@ -60,19 +61,55 @@ namespace ms_console_tutorials
 
 
 
+        //public void MakeWithdrawal(decimal amount, DateTime date, string note)
+        //{
+        //    if (amount <= 0)
+        //    {
+        //        throw new ArgumentOutOfRangeException(nameof(amount), "Amount of withdrawal must be positive");
+        //    }
+        //    if (Balance - amount < minimumBalance)
+        //    {
+        //        throw new InvalidOperationException("Not sufficient funds for this withdrawal");
+        //    }
+        //    var withdrawal = new Transaction(-amount, date, note);
+        //    allTransactions.Add(withdrawal);
+        //}
+
+
+
         public void MakeWithdrawal(decimal amount, DateTime date, string note)
         {
             if (amount <= 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(amount), "Amount of withdrawal must be positive");
             }
-            if (Balance - amount < minimumBalance)
+            var overdraftTransaction = CheckWithdrawalLimit(Balance - amount < minimumBalance);
+            var withdrawal = new Transaction(-amount, date, note);
+            allTransactions.Add(withdrawal);
+            if (overdraftTransaction != null)
+                allTransactions.Add(overdraftTransaction);
+        }
+
+        protected virtual Transaction? CheckWithdrawalLimit(bool isOverdrawn)
+        {
+            if (isOverdrawn)
             {
                 throw new InvalidOperationException("Not sufficient funds for this withdrawal");
             }
-            var withdrawal = new Transaction(-amount, date, note);
-            allTransactions.Add(withdrawal);
+            else
+            {
+                return default;
+            }
         }
+
+        protected override Transaction? CheckWithdrawalLimit(bool isOverdrawn) =>
+            isOverdrawn
+            ? new Transaction(-20, DateTime.Now, "Apply overdraft fee")
+            : default;
+
+
+
+
 
 
 
